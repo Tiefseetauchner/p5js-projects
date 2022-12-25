@@ -1,14 +1,14 @@
-import p5 from 'p5';
-
-const sketch = (s: p5) => {
-    s.setup = () => {
-        s.createCanvas(10, 10); 
-    }
-
-    s.draw = () => {
-        s.background(0);
-        s.circle(10, 10, 10);
-    }
+function setup() {
+    createCanvas(800, 600);
+    background(0);
+    ellipseMode(CORNER);
 }
 
-const sketchInstance = new p5(sketch);
+function draw() {
+    let rx = random(10, 100);
+    let ry = random(10, 100);
+    let x = random(0, width - rx);
+    let y = random(0, height - ry);
+
+    ellipse(x, y, rx, ry);
+}
